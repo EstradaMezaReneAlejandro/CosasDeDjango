@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>tareas pendientes</h1>
+<ul>
+    {% for t in task %}
+    {% if t.datecompleted != null %}
+    <li>
+        <h3>
+            {{t.title}}
+        </h3>
+        <p>
+            {{t.description}}
+        </p>
+        <p>
+            {{t.user.username}}
+        </p>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}

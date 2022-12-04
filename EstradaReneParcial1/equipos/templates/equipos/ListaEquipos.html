@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lista de equipos</h1>
+
+  
+{% for e in equipo %}
+    <div>
+        <h3>{{ e.nombre }}</h3>
+        <p>Año de fundación: {{ e.fechaCreacion }}</p>
+        <p>Ciudad: {{ e.ciudad }}</p>
+        <p>País: {{ e.pais }}</p>
+        <p>Confederación: {{ e.confederacion }}</p>
+        <p>Títulos: {{ e.titulos }}</p>
+        <div>
+            <button>Editar</button>
+            <button>Borrar</button>
+        </div>
+    </div>
+{% endfor %}
+
+<a href="{% url 'equipos:Registrar-Equipo' %}">Registrar nuevo equipo</a>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'lineas/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Reporte de empleados del área de microtecnología</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="m-2 pt-2 col border rounded">
+            <h3 class="ml-2">Área de microtecnologia</h3>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Área</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in empleado %}
+                        {% if e.area == "Microtecnologia" %}
+                            <tr>
+                                <th scope="row">{{e.id}}</th>
+                                <td>{{e.nombre}}</td>
+                                <td>Microtecnologia</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div>
+{% endblock %}

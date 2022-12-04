@@ -1,0 +1,27 @@
+{% extends 'lineas/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Reporte de horas extra de los empleados</h1>
+</div>
+<div class="container border rounded">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Horas Extra</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for e in empleado %}
+                <tr>
+                    <th scope="row">{{e.id}}</th>
+                    <td>{{e.nombre}}</td>
+                    <td>{{e.horasExtra}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'lineas/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Reporte de órdenes por día</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="{% url 'ordenes' %}">Todas las órdenes</a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'ordenes-semana' %}">Órdenes por semana</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="m-2 pt-2 col border rounded">
+            <h3 class="ml-2">Estado de órdenes</h3>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Número de orden</th>
+                        <th scope="col">Cedente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Estado</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for o in orden %}
+                        {% if o.status %}
+                            <tr>
+                                <th scope="row">{{o.id}}</th>
+                                <td>{{o.cedente}}</td>
+                                <td>{{o.fecha}}</td>
+                                <td>Abierta</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <th scope="row">{{o.id}}</th>
+                                <td>{{o.cedente}}</td>
+                                <td>{{o.fecha}}</td>
+                                <td>Cerrada</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div>
+{% endblock %}

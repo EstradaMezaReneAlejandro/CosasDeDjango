@@ -1,0 +1,50 @@
+{% extends 'lineas/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Reporte de productos en area automotriz</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="{% url 'productos-micro' %}">Productos en area de microtecnologia</a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'productos-dia' %}">Productos por dia</a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'productos-semana' %}">Productos por semana</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="m-2 pt-2 col border rounded">
+            <h3 class="ml-2">Productos</h3>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Número de producto</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Área</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in producto %}
+                            <tr>
+                                <th scope="row">{{p.id}}</th>
+                                <td>{{p.nombre}}</td>
+                                <td>{{p.fecha}}</td>
+                                <td>{{p.area}}</td>
+                            </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div>
+{% endblock %}

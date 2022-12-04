@@ -1,0 +1,14 @@
+asgiref==3.5.2
+Django==4.1
+django-crispy-forms==1.14.0
+mysqlclient==2.1.1
+numpy==1.23.2
+Pillow==9.2.0
+PyMySQL==1.0.2
+sqlparse==0.4.2
+tzdata==2022.2
+python==3.9.12
+so==windows 10
+sgbd==MySQL
+django-crispy-forms==1.14.0
+bootstrap==4.3

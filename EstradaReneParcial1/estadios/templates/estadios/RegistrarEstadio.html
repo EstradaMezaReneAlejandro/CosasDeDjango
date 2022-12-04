@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Registrar nuevo estadio</h1>
+<form action="." method="POST">
+    {% csrf_token %}
+    {% csrf_token %}
+    {% for campo in form %}
+        <label>{{ campo.label }}</label>
+        <input type="{{ campo.field.widget.input_type }}" >
+    {% endfor %}
+</form>
+    
+{% endblock %}

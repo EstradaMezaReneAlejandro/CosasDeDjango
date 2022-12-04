@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lista de estadios</h1>
+
+  
+{% for e in estadio %}
+    <div>
+        <h3>{{ e.nombre }}</h3>
+        <p>Capacidad: {{ e.capacidad }}</p>
+        <p>Ciudad: {{ e.ciudad }}</p>
+        <p>País: {{ e.pais }}</p>
+        <p>Equipo: {{ e.equipo }}</p>
+        <div>
+            <button>Editar</button>
+            <button>Borrar</button>
+        </div>
+    </div>
+{% endfor %}
+
+<a href="{% url 'estadios:Registrar-Estadio' %}">Registrar nuevo estadio</a>
+
+{% endblock %}

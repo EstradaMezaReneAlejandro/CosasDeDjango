@@ -1,0 +1,35 @@
+{% extends 'lineas/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Balance piezas/producto</h1>
+</div>
+<div class="container border rounded">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Prueba de calidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in producto %}
+                {% if p.pruebaCalidad %}
+                    <tr>
+                        <th scope="row">{{p.id}}</th>
+                        <td>{{p.nombre}}</td>
+                        <td>Aprobado</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <th scope="row">{{p.id}}</th>
+                        <td>{{p.nombre}}</td>
+                        <td>No Aprobado</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

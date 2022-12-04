@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lista de jugadores</h1>
+
+  
+{% for j in jugador %}
+    <div>
+        <h3>{{ j.nombre }}</h3>
+        <p>Equipo: {{ j.equipo }}</p>
+        <p>Posicion: {{ j.posicion }}</p>
+        <p>Nacionalidad: {{ j.nacionalidad }}</p>
+        <p>Estatura: {{ j.estatura }}</p>
+        <p>Edad: {{ j.edad }}</p>
+        <div>
+            <a href="#">Editar</a>
+            <a href="#">Borrar</a>
+        </div>
+    </div>
+{% endfor %}
+
+<a href="{% url 'jugadores:Registrar-Jugador' %}">Registrar nuevo jugador</a>
+
+{% endblock %}
